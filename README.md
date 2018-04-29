@@ -41,7 +41,7 @@ Raspberry Pi 3 b+ Recommened but any linux Computer will work.
 Run The Install.sh Script in The Server Folder
 
 ### LoRa Client: 
-Upload the Client.ino to The Arduino Of Choice. 
+Upload the Client.ino from LoRa to The Arduino Of Choice. 
 Connect to LoRa Module According to this diagram
 
 | Semtech SX1276/77/78/79 | Arduino |
