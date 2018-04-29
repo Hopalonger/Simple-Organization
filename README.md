@@ -28,10 +28,10 @@ application.
 
 ## Hardware
 ### LoRa Client:
-Any Arduino With Support for *Arduino-LoRa Libary, Audafruit Neopixel libray*  and accompanying hardware
+Any Arduino With Support for *Arduino-LoRa Libary, Audafruit Neopixel libray*  and accompanying hardware.
 
 ### Internet Based
 Raspberry Pi With a Arduino Nano to control the Addressable LEDs. 
 
 ### Internet Based Server
-Raspberry Pi 3 b+ Recommened but any linux Computer wi
+Raspberry Pi 3 b+ Recommened but any linux Computer will work.
