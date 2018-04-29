@@ -35,3 +35,28 @@ Raspberry Pi With a Arduino Nano to control the Addressable LEDs.
 
 ### Internet Based Server
 Raspberry Pi 3 b+ Recommened but any linux Computer will work.
+
+## Installation
+### Server
+Run The Install.sh Script in The Server Folder
+
+### LoRa Client: 
+Upload the Client.ino to The Arduino Of Choice. 
+Connect to LoRa Module According to this diagram
+
+| Semtech SX1276/77/78/79 | Arduino |
+| :---------------------: | :------:|
+| VCC | 3.3V |
+| GND | GND |
+| SCK | SCK |
+| MISO | MISO |
+| MOSI | MOSI |
+| NSS | 10 |
+| NRESET | 9 |
+| DIO0 | 2 |
+
+### Internet Client
+Upload Slave.ino to the Arduino. Then Run The Install.sh Script Under Internet
+
+### LoRa Relay
+Upload The Repeater.ino to the Arduino. Then Run The Install.sh Script Under Internet
