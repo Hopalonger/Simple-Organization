@@ -27,6 +27,8 @@ String LED = "";
 int sendpixel;
 int Send;
 String Data4 = "";
+// Use NEO_KHZ400 if running at 3.3v on Arduino Pro Mini
+// Otherwise dont change a thing
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
 void setup() {
   LoRa.begin(433E6);
