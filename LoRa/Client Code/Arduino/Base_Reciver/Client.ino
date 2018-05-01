@@ -9,9 +9,13 @@ int G = 0;
 int B = 123;
 
 
-// Indicator LEDS
+// Indicator Pin
+#define IND 8
+// Indicator LEDs
+#define LND 8
+
 #define indicator 40
-#define indicatorR 0
+#define indicator 0
 
 // Hardware
 String Device = "aaaa";
@@ -27,9 +31,18 @@ String LED = "";
 int sendpixel;
 int Send;
 String Data4 = "";
-// Use NEO_KHZ400 if running at 3.3v on Arduino Pro Mini
-// Otherwise dont change a thing
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
+int count = 0;
+// Set to NEO_KHZ400 if using a 8MHz 3.3v Board
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(leds, PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel ind = Adafruit_NeoPixel(LND, IND, NEO_GRB + NEO_KHZ800);
+void Indicator() {
+  count = 0;
+  while (count < LND) {
+    ind.setPixelColor(count, 0, 0, 0);
+    count++;
+  }
+
+}
 void setup() {
   LoRa.begin(433E6);
   LoRa.begin(433E6);
@@ -68,45 +81,47 @@ void loop() {
     Serial.print("Recived LED:");
     LED = Data.substring(4);
     Serial.println(LED);
-
+    Data = "";nb v
+    Data4 = "";
   }
   sendpixel = LED.toInt();
+  LED = -1;
   if (sendpixel >= leds) {
     Serial.println("Number to big");
     delay(clock);
   }
   else {
     bool Largetray = true;
-// Large Trays
-bool Large1 = true;
-bool Large2 = true;
-bool Large3 = true;
-bool Large4 = true;
-bool Large5 = true;
-bool Large6 = true;
-bool Large7 = true;
-bool Large8 = true;
-bool Large9 = true;
-//Large Trays Put Specified values Make Sure They are unique
-int Largetr1 = 45;
-int Largetr2 = 102;
-int Largetr3 = 103;
-int Largetr4 = 104;
-int Largetr5 = 105;
-int Largetr6 = 106;
-int Largetr7 = 107;
-int Largetr8 = 108;
-int Largetr9 = 109;
-//LargeTrays LED value Multi Diget do not add,
-int LargetrLED1 = 2;
-int LargetrLED2 = 23;
-int LargetrLED3 = 23;
-int LargetrLED4 = 23;
-int LargetrLED5 = 23;
-int LargetrLED6 = 23;
-int LargetrLED7 = 23;
-int LargetrLED8 = 23;
-int LargetrLED9 = 23;
+    // Large Trays
+    bool Large1 = true;
+    bool Large2 = true;
+    bool Large3 = true;
+    bool Large4 = true;
+    bool Large5 = true;
+    bool Large6 = true;
+    bool Large7 = true;
+    bool Large8 = true;
+    bool Large9 = true;
+    //Large Trays Put Specified values Make Sure They are unique
+    int Largetr1 = 45;
+    int Largetr2 = 102;
+    int Largetr3 = 103;
+    int Largetr4 = 104;
+    int Largetr5 = 105;
+    int Largetr6 = 106;
+    int Largetr7 = 107;
+    int Largetr8 = 108;
+    int Largetr9 = 109;
+    //LargeTrays LED value Multi Diget do not add,
+    int LargetrLED1 = 2;
+    int LargetrLED2 = 23;
+    int LargetrLED3 = 23;
+    int LargetrLED4 = 23;
+    int LargetrLED5 = 23;
+    int LargetrLED6 = 23;
+    int LargetrLED7 = 23;
+    int LargetrLED8 = 23;
+    int LargetrLED9 = 23;
     if (Largetray == true) {
       if (Large1 == true) {
         if (sendpixel == Largetr1) {
@@ -114,6 +129,8 @@ int LargetrLED9 = 23;
           Serial.println("Using Large Tray 1");
           strip.setPixelColor(Send, R, G, B);
           strip.show();
+          Send = "";
+          sendpixel = "";
         }
         // End of start block
 
@@ -125,6 +142,9 @@ int LargetrLED9 = 23;
           Serial.print("Using Large Tray 2");
           strip.setPixelColor(Send, R, G, B);
           strip.show();
+          Indicator();
+          Send = "";
+          sendpixel = "";
         }
 
       }
@@ -135,6 +155,10 @@ int LargetrLED9 = 23;
           Serial.println("Using Large Tray 3");
           strip.setPixelColor(Send, R, G, B);
           strip.show();
+          Indicator();
+          Send = "";
+
+          sendpixel = "";
         }
 
       }
@@ -145,6 +169,9 @@ int LargetrLED9 = 23;
           Serial.println("Using Large Tray 4");
           strip.setPixelColor(Send, R, G, B);
           strip.show();
+          Indicator();
+          Send = "";
+          sendpixel = "";
         }
 
       }
@@ -155,6 +182,9 @@ int LargetrLED9 = 23;
           Serial.println("Using Large Tray 5");
           strip.setPixelColor(Send, R, G, B);
           strip.show();
+          Indicator();
+          Send = "";
+          sendpixel = "";
         }
 
       }
@@ -165,6 +195,9 @@ int LargetrLED9 = 23;
           Serial.println("Using Large Tray 6");
           strip.setPixelColor(Send, R, G, B);
           strip.show();
+          Indicator();
+          Send = "";
+          sendpixel = "";
         }
 
       }
@@ -175,7 +208,10 @@ int LargetrLED9 = 23;
           Send = LargetrLED7;
           strip.setPixelColor(Send, R, G, B);
           strip.show();
+          Indicator();
           Serial.println("Using Large Tray 7");
+          Send = "";
+          sendpixel = "";
         }
 
       }
@@ -187,6 +223,9 @@ int LargetrLED9 = 23;
           Serial.println("Using Large Tray 8");
           strip.setPixelColor(Send, R, G, B);
           strip.show();
+          Indicator();
+          Send = "";
+          sendpixel = "";
         }
 
       }
@@ -198,25 +237,37 @@ int LargetrLED9 = 23;
           Serial.println("Using Large Tray 9");
           strip.setPixelColor(Send, R, G, B);
           strip.show();
+          Indicator();
+          Send = "";
+          sendpixel = "";
         }
 
       }
-      else if (sendpixel == indicator) {
-        Send = indicatorR;
-      }
-      else {
+      else
+      {
         // End Of Block 9
         Send = sendpixel;
         strip.setPixelColor(Send, R, G, B);
         strip.show();
+        Indicator();
+        Send = "";
+        sendpixel = "";
       }
-      delay(clock);
+    }
+    else {
+      // End Of Block 9
+      Send = sendpixel;
+      strip.setPixelColor(Send, R, G, B);
+      strip.show();
+      Indicator();
+      Send = "";
+      sendpixel = "";
     }
 
   }
-  delay(clock);
-  Serial.println("No Data Recived");
+
 }
+
 
 
 
