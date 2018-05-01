@@ -4,6 +4,12 @@
 
 #define PIN 3 // the pin your strip is connected to 
 #define COUNT 36 // how many led's are on that strip  
+// Indicator Pin
+#define IND 8
+// Indicator LEDs
+#define LND 8
+// Set to NEO_KHZ400 if using a 8MHz 3.3v Board
+Adafruit_NeoPixel ind = Adafruit_NeoPixel(LND, IND, NEO_GRB + NEO_KHZ800);
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(COUNT, PIN, NEO_GRB + NEO_KHZ800); //defines the strips properties  
 int R; 
 int G; 
