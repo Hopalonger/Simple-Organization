@@ -49,6 +49,14 @@ if (Serial.available() < 0) {
 doShow();   
 } 
 }  
+void Indicator() {
+  count = 0;
+  while (count < LND) {
+    ind.setPixelColor(count, 0, 0, 0);
+    count++;
+  }
+
+}
 void setup() {
 strip.begin(); // start the strip
 strip.show(); // set the strip to black (because we havent told it to do anything yet)
@@ -69,6 +77,7 @@ B = Serial.parseInt(); //get the INT
 }
 if (c == 'P') {
 setColor(Serial.parseInt(), R, G, B);
+Indicator();
 }
 if (c == 'S') {
 doShow();
