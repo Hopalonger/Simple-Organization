@@ -8,7 +8,7 @@
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 
-An IOT and LoRa based Organization and Search Engine for all of your things
+An Physical Orgaization and Search Engine for all of your things based off of LoRa, IOT, and Addressable LED's 
 
 **Simple Organization** is a Local Internet/Radio Based Network of interfaces that
 help organize and keep track of all of your household items. People in the future have jobs based on creativity but if they are not allowed to be creative due to them not being able to find things it makes them very unproductive
