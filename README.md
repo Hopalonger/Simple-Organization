@@ -13,14 +13,14 @@ An Physical Orgaization and Search Engine for all of your things based off of Lo
 **Simple Organization** is a Local Internet/Radio Based Network of interfaces that
 help organize and keep track of all of your household items. People in the future have jobs based on creativity but if they are not allowed to be creative due to them not being able to find things it makes them very unproductive
 
-## How it Works
+## How it Works:
 Simple Organization is a Program Based off of Opencart but so much more at the same time.
 When A product is seached for and found, Coresponding Adressable LED lights/Neopixels turn on around the place where it
 is supposed to be. There are 2 Basic Ways of trasmiting data, Intnernet and LoRa. The LoRa Method Requires internet 
 for the Relay module. This system could be implemented into Cabinets, Part Orgaizers and much more.  
 
 
-### Internet Based
+### Internet Based:
 1. Server With Serch engine and device database
 2. Device Query server every 2 seconds 
 3. Device turns of Corresponding Light
@@ -32,7 +32,7 @@ for the Relay module. This system could be implemented into Cabinets, Part Orgai
 4. Devices Receive and process turning on corresponding light
 
 
-## Hardware
+## Hardware:
 ### LoRa Client:
 Any Arduino (Recommnend Pro Mini Run at 3v3)
 2 Seperate Strips of WS2812, WS2811, or WS2812B LEDS (One Strip is indicator and one is For each Item)
@@ -51,6 +51,10 @@ Any Arduino With built in USB (Reccomend A Nano)
 ### Server:
 Any System that Supports OpenCart, Wamp/Lamp 
 We Reccomend Raspberry Pi 3 - Model B+ 
+
+## Installation:
+Please Refer to 'Install-Instructions.md' for detailed Instructions.
+
 
 ## Licence:
 ### Attribution-NonCommercial CC BY-NC
