@@ -1,4 +1,4 @@
-#Install Instructions:
+# Install Instructions:
 ## Install Instructions For Server:
 1. Run The Install Script that is in the Install Folder.
 2. When Done find the IP address of the Device. 
