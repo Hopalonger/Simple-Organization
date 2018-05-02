@@ -14,10 +14,11 @@
 1. Donwload and Install the Arduiono IDE for you Computer Platform. 
 2. Plug Arduino Of Choice into Computer (Arduino Pro Mini Recommened)
 3. Open The Code That is in the in the CLient Code folder of LoRa. 
-4. Change Any of The Varibles that Are in the top Or Middle of the Code
-5. Select The COM port that the Arduino Corresponds to in the Tools Tab.
-6. Hit the Upload Button in the top left. (The Arrow to the Left)
-7. Attach the LoRa Module to the Arduino Based off Diagram Below
+4. Install the used Libarys Which include 'Arduino-LoRa' and 'Adafruit_NeoPixel'.
+5 Change Any of The Varibles that Are in the top Or Middle of the Code.
+6 Select The COM port that the Arduino Corresponds to in the Tools Tab.
+7 Hit the Upload Button in the top left. (The Arrow to the Left).
+8 Attach the LoRa Module to the Arduino Based off Diagram Below.
 
 | Semtech SX1276/77/78/79 | Arduino |
 | :---------------------: | :------:|
@@ -30,6 +31,5 @@
 | NRESET | 9 |
 | DIO0 | 2 |
 
-8. Connect Your Choice of Addressable LEDS to the Arduino on the Pins Selected in the Code
-9. Power Up the Device on a 3.3v Power Source. Do Not use 5v, LoRa Boards Do Not Use 5v
-
+9.Connect Your Choice of Addressable LEDS to the Arduino on the Pins Selected in the Code.
+10. Power Up the Device on a 3.3v Power Source. Do Not use 5v, LoRa Boards Do Not Use 5v.
