@@ -3,8 +3,10 @@
 Device = "aaaa"
 
 # URLS: 
-url = 'http://10.42.252.186/newfile.txt'
-power = "http://10.42.252.186/power.txt"
+# Address of Sever, Local or domain
+Address = 'http://10.42.252.186/'
+# Set Color R=Red G=Green B=Blue (R255G0B0 = Bright Red) Recommend using bright Colors 
+
 Color = "R255B255G100"
 # If the large Tray is enabled
 Largetray = True
@@ -39,6 +41,8 @@ LargetrLED7 = Color + "P23"
 LargetrLED8 = Color + "P23"
 LargetrLED9 = Color + "P23"
 #**************************************************************************************
+url = Address + 'newfile.txt'
+power = Address + 'power.txt"
 
 
 
