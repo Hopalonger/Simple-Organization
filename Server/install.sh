@@ -6,7 +6,8 @@ sudo apt -y  install apache2
 sudo apt -y  install php php-mbstring
 sudo apt -y  install mysql-server php-mysql
 sudo apt-get install php5-curl
-wget https://github.com/opencart/opencart/archive/master.zip
+sudo apt-get -y install git 
+git clone https://github.com/Hopalonger/opencart.git 
 sudo cp master.zip /var/www/html/
 sudo cd /var/www/html
 sudo unzip master.zip
