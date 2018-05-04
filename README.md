@@ -53,10 +53,10 @@ Any System that Supports OpenCart, Wamp/Lamp
 We Reccomend Raspberry Pi 3 - Model B+ 
 
 ## Installation:
-Please Refer to 'Install-Instructions.md' for detailed Instructions.
+Please Refer to [Install-Instructions.md](https://github.com/Hopalonger/Simple-Organization/blob/master/Install-Instructions.md) for detailed Instructions.
 
 ## Contributing:
-Please read the [Wiki Article](https://github.com/Hopalonger/Simple-Organization/wiki/Contributing-Standards:)
+Please read the [Wiki Article](https://github.com/Hopalonger/Simple-Organization/wiki/Contributing-Standards:) on Contributing.
 
 ## Licence:
 ### Attribution-NonCommercial CC BY-NC
