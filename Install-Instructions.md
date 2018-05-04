@@ -5,9 +5,9 @@
 3. Save this for later.
 4. In The Terminal Enter Command `mysql -uroot -p` .
 
-5. You will be promted With a Return that looks like this 'mysql>' Enter 'create database YOURDATABASENAME;'.
-6. Then Enter ' GRANT ALL ON YOURDATABASENAME.* TO 'YOURUSER'@'localhost' IDENTIFIED BY 'YOURPASSWORD';.
-7. Finally Enter 'quit'.
+5. You will be promted With a Return that looks like this `mysql>` Enter `create database YOURDATABASENAME;`.
+6. Then Enter ` GRANT ALL ON YOURDATABASENAME.* TO 'YOURUSER'@'localhost' IDENTIFIED BY 'YOURPASSWORD';`.
+7. Finally Enter '`quit`.
 8. Navigate to the Web Site hosted on the Device.
 9.Complete the installation through the web pages. Once the installation is complete remove the install directory.
 10. Finally Type 'cd opencart/upload' Then ' rm -rf install'
