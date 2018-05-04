@@ -55,6 +55,8 @@ We Reccomend Raspberry Pi 3 - Model B+
 ## Installation:
 Please Refer to 'Install-Instructions.md' for detailed Instructions.
 
+## Contributing:
+Please read the [Wiki Artical](https://github.com/Hopalonger/Simple-Organization.wiki.git)
 
 ## Licence:
 ### Attribution-NonCommercial CC BY-NC
