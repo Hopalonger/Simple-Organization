@@ -81,7 +81,7 @@ void loop() {
     Serial.print("Recived LED:");
     LED = Data.substring(4);
     Serial.println(LED);
-    Data = "";nb v
+    Data = "";
     Data4 = "";
   }
   sendpixel = LED.toInt();
