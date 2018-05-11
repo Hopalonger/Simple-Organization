@@ -42,7 +42,7 @@ LargetrLED8 = Color + "P23"
 LargetrLED9 = Color + "P23"
 #**************************************************************************************
 url = Address + 'newfile.txt'
-power = Address + 'power.txt"
+power = Address + "power.txt"
 
 
 
