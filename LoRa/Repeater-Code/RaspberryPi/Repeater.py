@@ -24,7 +24,7 @@ time.sleep(5)
 Word = "ON"
 
 while True:
-	print("Connecting'")
+	print("Connecting")
         powerresponse = requests.get(power)
 	powerparsed = BeautifulSoup(powerresponse.content, "html.parser")
         print powerparsed
