@@ -17,3 +17,4 @@ sudo cp /var/www/html/opencart-master/admin/config-dist.php /var/www/html/openca
 sudo cp /var/www/html/opencart-master/config-dist.php /var/www/html/opencart-master/config.php
 sudo chmod 777 -R /var/www/html/opencart-master 
 print "Create Database and remove install"
+echo  "Run Loop.py When done. It has A Gui"
