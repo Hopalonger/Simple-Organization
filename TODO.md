@@ -20,3 +20,4 @@ Create Some Smaller PCB's
 ## GitHub
 Write Instrutions for Creating Database
 Create Code For Mobile App
+Check Licencing On the Code Used 
