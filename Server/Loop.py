@@ -3,29 +3,16 @@ import serial
 import time
 import requests
 import os
+import RPi.GPIO as GPIO
 import Tkinter as tk
+import socket
 from bs4 import BeautifulSoup
 
-class FullScreenApp(object):
-    def __init__(self, master, **kwargs):
-        self.master=master
-        pad=3
-        self._geom='200x200+0+0'
-        master.geometry("{0}x{1}+0+0".format(
-            master.winfo_screenwidth()-pad, master.winfo_screenheight()-pad))
-        master.bind('<Escape>',self.toggle_geom)            
-    def toggle_geom(self,event):
-        geom=self.master.winfo_geometry()
-        print(geom,self._geom)
-        self.master.geometry(self._geom)
-        self._geom=geom
 
-        root=tk.Tk()
-app=FullScreenApp(root)
-root.mainloop()
 while True:
 
   Update()
+  Pair()
   time.sleep(1)
   
 
@@ -38,3 +25,26 @@ UpURL = "http://10.42.252.186/Update.txt"
   Ups = BeautifulSoup(Up.content, "html.parser")
   os.system(Ups)
   
+def Pair():
+    input_state = GPIO.input(18)
+    if input_state == False:
+       
+    
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    print(s.getsockname()[0])
+    s.close()
+    
+    Net = s[:-3]
+    UDP_PORT = 520
+    while i < 999
+        UDP_IP = Net + i
+        print("UDP target IP:", UDP_IP)
+        print("UDP target port:", UDP_PORT)
+        print("message:", MESSAGE)
+        time.sleep(0.2)
+        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
+        sock.sendto(bytes(s "utf-8"), (UDP_IP, UDP_PORT))
+        i += 1
+    
+        
