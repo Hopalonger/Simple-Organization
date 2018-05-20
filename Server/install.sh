@@ -22,5 +22,5 @@ sudo chmod 777 -R /var/www/html/opencart-master
 
 sudo update-rc.d Simple-Organization/Server/Start.sh defaults
 chmod +x Simple-Organization/Server/Start.sh
-print "Create Database and remove install"
-echo  "Run Start.sh When done. It has A Gui or Reboot "
+print "Create Database and remove install. Once Completed Restart"
+
