@@ -1,6 +1,5 @@
-url = 'http://10.42.252.186/newfile.txt'
-power = "http://10.42.252.186/power.txt"
-
+# Server Hostname
+Name = "SimpleStorage"
 
 
 import serial
@@ -9,6 +8,9 @@ import requests
 from bs4 import BeautifulSoup
 print
 print
+
+url =  "http://" + Name + "/newfile.txt"
+power = "http://" + Name + "/newfile.txt"
 
 
 # NOTE the user must ensure that the serial port and baudrate are
