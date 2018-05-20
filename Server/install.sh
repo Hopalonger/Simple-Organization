@@ -17,5 +17,7 @@ sudo mv -v upload/* ../opencart-master/\
 sudo cp /var/www/html/opencart-master/admin/config-dist.php /var/www/html/opencart-master/admin/config.php
 sudo cp /var/www/html/opencart-master/config-dist.php /var/www/html/opencart-master/config.php
 sudo chmod 777 -R /var/www/html/opencart-master 
+// Update This When ISO Done
+sudo sed -i '/SearchPattern/aNew python /home/pi/myscript.py &' /etc/rc.local
 print "Create Database and remove install"
-echo  "Run Loop.py When done. It has A Gui"
+echo  "Run Start.sh When done. It has A Gui or Reboot "
