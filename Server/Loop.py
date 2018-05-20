@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 while True:
 
   Update()
-  Pair()
+  Status()
   time.sleep(1)
   
 
@@ -24,4 +24,7 @@ UpURL = "http://10.42.252.186/Update.txt"
   Up = requests.get(UpURL)
   Ups = BeautifulSoup(Up.content, "html.parser")
   os.system(Ups)
-
+  
+  
+def Status():
+   result = subprocess.run(['hostname'], stdout=subprocess.PIPE)
