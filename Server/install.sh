@@ -7,6 +7,7 @@ sudo apt -y  install php php-mbstring
 sudo apt -y  install mysql-server php-mysql
 sudo apt-get install php5-curl
 sudo apt-get -y install git 
+sudo apt-get -y install avahi-utils
 git clone https://github.com/Hopalonger/opencart.git 
 sudo cp master.zip /var/www/html/
 sudo cd /var/www/html
