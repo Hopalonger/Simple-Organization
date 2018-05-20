@@ -18,6 +18,10 @@ sudo cp /var/www/html/opencart-master/admin/config-dist.php /var/www/html/openca
 sudo cp /var/www/html/opencart-master/config-dist.php /var/www/html/opencart-master/config.php
 sudo chmod 777 -R /var/www/html/opencart-master 
 // Update This When ISO Done
-sudo sed -i '/SearchPattern/aNew python /home/pi/myscript.py &' /etc/rc.local
+//sudo sed -i '/SearchPattern/aNew python /home/pi/myscript.py &' /etc/rc.local
+// Setting To Run At Startup 
+echo "Simple-Organization/Server/Start.sh &" >> /etc/rc.local
+echo "exit 0" >> /etc/rc.local
+
 print "Create Database and remove install"
 echo  "Run Start.sh When done. It has A Gui or Reboot "
