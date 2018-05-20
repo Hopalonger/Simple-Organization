@@ -27,4 +27,4 @@ UpURL = "http://10.42.252.186/Update.txt"
   
   
 def Status():
-   result = subprocess.run(['hostname'], stdout=subprocess.PIPE)
+   print(subprocess.check_output(['hostname']))
