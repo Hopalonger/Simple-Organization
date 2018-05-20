@@ -1,10 +1,9 @@
 # Install Instructions:
 ## Install Instructions For Server:
-1. Run The Install Script that is in the Install Folder.
-2. When Done find the IP address of the Device. 
-3. Save this for later.
+1. Clone the Repository to your computer with the `git clone https://github.com/Hopalonger/Simple-Organization.git` Command
+2. Navigate to the Server Directory with the command `cd Simple-Organization/Server`
+3. Run the install Script with `bash install.sh`
 4. In The Terminal Enter Command `mysql -uroot -p` .
-
 5. You will be promted With a Return that looks like this `mysql>` Enter `create database YOURDATABASENAME;`.
 6. Then Enter ` GRANT ALL ON YOURDATABASENAME.* TO 'YOURUSER'@'localhost' IDENTIFIED BY 'YOURPASSWORD';`.
 7. Finally Enter '`quit`.
