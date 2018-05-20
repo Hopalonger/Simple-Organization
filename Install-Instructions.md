@@ -40,7 +40,7 @@
 
 1. Donwload and Install the Arduino IDE for you Computer Platform and Download the Repository. 
 2. Plug Arduino Of Choice into Computer (Arduino Pro Mini Recommened)
-3. Open The Code That is in the in the CLient Code folder of LoRa. 
+3. Open The Code That is in the in the `Repeater-Code` folder of LoRa. 
 4. Install the used Libarys Which include `Arduino-LoRa` and `Adafruit_NeoPixel`.
 5 Change Any of The Varibles that Are in the top Or Middle of the Code.
 6 Select The COM port that the Arduino Corresponds to in the Tools Tab.
@@ -63,4 +63,5 @@
 11. Clone the Repository to your computer with the `git clone https://github.com/Hopalonger/Simple-Organization.git` Command
 12. Navigate to the LoRa Repeater Folder With `cd Simple-Organization/LoRa/Repeater-Code/RaspberryPi`
 13. Run the Install.sh Script with `sudo bash install.sh`
-14. Reboot Device
+14. Reboot Device 
+15. The Device Should be Working
