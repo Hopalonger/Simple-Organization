@@ -6,12 +6,29 @@ Device = "aaaa"
 # Address of Sever, Local or domain
 Address = 'http://SimpleStorage.local/
 # Set Color R=Red G=Green B=Blue Recommend using bright Colors 
-
+# Finder Strip
 R ="255"
 G = "100"
 B = "255"
+# Indicator Strip
+R2 ="255"
+G2 = "100"
+B2 = "255"
+# NeoPixel Data For Product Strip
+LED_COUNT   = 16      # Number of LED pixels.
+LED_PIN     = 18      # GPIO pin connected to the pixels (must support PWM!).
+LED_FREQ_HZ = 800000  # LED signal frequency in hertz (usually 800khz)
+LED_DMA     = 5       # DMA channel to use for generating signal (try 5)
+LED_INVERT  = False   # True to invert the signal (when using NPN transistor level shift)
+# Neopixel Data for the Indicator Strip
+LED_COUNT2   = 16      # Number of LED pixels.
+LED_PIN2     = 18      # GPIO pin connected to the pixels (must support PWM!).
+LED_FREQ_HZ2 = 800000  # LED signal frequency in hertz (usually 800khz)
+LED_DMA2     = 5       # DMA channel to use for generating signal (try 5)
+LED_INVERT2  = False   # True to invert the signal (when using NPN transistor level shift)
 
-Color = ","+R +","+G+","+B
+Color = ","+R +","+G+","+B 
+Color2 = ","+R2 +","+G2+","+B2 
 # If the large Tray is enabled
 Largetray = True
 
@@ -66,8 +83,10 @@ print
 
 
 Word = "ON"
-
-
+ind = Adafruit_NeoPixel(LED_COUNT2, LED_PIN2, LED_FREQ_HZ2, LED_DMA2, LED_INVERT2)
+strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT)
+strip.begin()
+ind.beign()
 #Creates Loop
 print "Starting"
 while True:
@@ -168,4 +187,5 @@ def senddata(data):
 	print("Sending Data:")
 	print(data)
 	setPixelColor(data)
+	ind
 	
