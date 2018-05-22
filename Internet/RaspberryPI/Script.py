@@ -4,10 +4,14 @@ Device = "aaaa"
 
 # URLS: 
 # Address of Sever, Local or domain
-Address = 'http://10.42.252.186/'
-# Set Color R=Red G=Green B=Blue (R255G0B0 = Bright Red) Recommend using bright Colors 
+Address = 'http://SimpleStorage.local/
+# Set Color R=Red G=Green B=Blue Recommend using bright Colors 
 
-Color = "R255B255G100"
+R ="255"
+G = "100"
+B = "255"
+
+Color = ","+R +","+G+","+B
 # If the large Tray is enabled
 Largetray = True
 
@@ -31,15 +35,15 @@ Largetr7 = 107
 Largetr8 = 108
 Largetr9 = 109
 #Large Trays LED value Code Custom Code ( Color value + Pixel number starts at Zero + Can have infinet pixels
-LargetrLED1 = Color + "P23"
-LargetrLED2 = Color + "P23"
-LargetrLED3 = Color + "P23"
-LargetrLED4 = Color + "P23"
-LargetrLED5 = Color + "P23"
-LargetrLED6 = Color + "P23"
-LargetrLED7 = Color + "P23"
-LargetrLED8 = Color + "P23"
-LargetrLED9 = Color + "P23"
+LargetrLED1 = "23" + Color
+LargetrLED2= "23" + Color
+LargetrLED3= "23" + Color
+LargetrLED4= "23" + Color
+LargetrLED5= "23" + Color
+LargetrLED6= "23" + Color
+LargetrLED7="23" + Color
+LargetrLED8= "23" + Color
+LargetrLED9 "23" + Color
 #**************************************************************************************
 url = Address + 'newfile.txt'
 power = Address + "power.txt"
@@ -52,44 +56,29 @@ import serial
 import time
 import requests
 from bs4 import BeautifulSoup
+import time
+ 
+from neopixel import *
 print
 print
 
 
 
 
-# NOTE the user must ensure that the serial port and baudrate are
-# correct
-serPort = "/dev/ttyACM0"
-baudRate = 9600
-ser = serial.Serial(serPort, baudRate)
-print "Serial port " + serPort + " opened  Baudrate " + str(baudRate)
-
-
-# NOTE the user must ensure that the serial port and baudrate are
-# correct
-serPort = "/dev/ttyACM0"
-baudRate = 9600
-ser = serial.Serial(serPort, baudRate)
-print "Serial port " + serPort + " opened  Baudrate " + str(baudRate)
-
-
-time.sleep(5)
-# Lets Respond
 Word = "ON"
 
 
 #Creates Loop
 print "Starting"
 while True:
-	print("Connecting'")
+	print("Connecting")
         powerresponse = requests.get(power)
 	powerparsed = BeautifulSoup(powerresponse.content, "html.parser")
         print powerparsed
         pow = powerparsed
         word = pow
         value = str(pow)
-
+	print("Connected Sucessfuly")
         if int(value) >= 1000:
 		# Gets Web Data
         	response = requests.get(url)
@@ -148,7 +137,7 @@ while True:
 				else:
 					Number2 == Number -1 
 					print("Sending Data")
-					senddata(Color + "P" + Number2 )		
+					senddata(Number2 + Color)		
 
 
 
@@ -178,5 +167,5 @@ while True:
 def senddata(data):
 	print("Sending Data:")
 	print(data)
-	ser.write(data.encode("uft-8"))
+	setPixelColor(data)
 	
