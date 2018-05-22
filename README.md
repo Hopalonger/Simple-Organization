@@ -37,16 +37,17 @@ for the Relay module. This system could be implemented into Cabinets, Part Orgai
 Any Arduino (Recommnend Pro Mini Run at 3v3)
 2 Seperate Strips of WS2812, WS2811, or WS2812B LEDS (One Strip is indicator and one is For each Item)
 And Any Semtech SX1276/77/78/79
+Any Organizer that You want to make smart
 
 ### Relay (LoRa):
-Raspberry Pi (Recommend Zero W)
-Any Arduino With built in USB (Reccomend A Nano)
+Any Linux Based Computer with 1 Free Usb Port
+Any 3v3   )
 Any Semtech SX1276/77/78/79 Soldered to the Arduino
 
 ### Internet Based:
 Raspberry Pi (Recommend Zero W)
-Any Arduino With built in USB (Reccomend A Nano)
 2 Seperate Strips of WS2812, WS2811, or WS2812B LEDS (One Strip is indicator and one is For each Item)
+Any Organizer that you want to make smart
 
 ### Server:
 Any System that Supports OpenCart, Wamp/Lamp 
