@@ -17,13 +17,13 @@ B2 = "255"
 # NeoPixel Data For Product Strip
 LED_COUNT   = 16      # Number of LED pixels.
 LED_PIN     = 18      # GPIO pin connected to the pixels (must support PWM!).
-LED_FREQ_HZ = 800000  # LED signal frequency in hertz (usually 800khz)
+LED_FREQ_HZ = 800000  # LED signal frequency in hertz (usually 800khz) Change To 400khz if using 8mhz 3v3 board.
 LED_DMA     = 5       # DMA channel to use for generating signal (try 5)
 LED_INVERT  = False   # True to invert the signal (when using NPN transistor level shift)
 # Neopixel Data for the Indicator Strip
 LED_COUNT2   = 16      # Number of LED pixels.
 LED_PIN2     = 18      # GPIO pin connected to the pixels (must support PWM!).
-LED_FREQ_HZ2 = 800000  # LED signal frequency in hertz (usually 800khz)
+LED_FREQ_HZ2 = 800000  # LED signal frequency in hertz (usually 800khz) Change To 400khz if using 8mhz 3v3 board.
 LED_DMA2     = 5       # DMA channel to use for generating signal (try 5)
 LED_INVERT2  = False   # True to invert the signal (when using NPN transistor level shift)
 
@@ -78,12 +78,16 @@ import time
 from neopixel import *
 print
 print
-
-
-
-
-Word = "ON"
 ind = Adafruit_NeoPixel(LED_COUNT2, LED_PIN2, LED_FREQ_HZ2, LED_DMA2, LED_INVERT2)
+
+def Indicator:
+	int count = 0
+	while count >= LED_COUNT2
+		ind.setPixelColor(Count, R2,B2,G2)
+
+	ind.Show()	
+Word = "ON"
+
 strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT)
 strip.begin()
 ind.beign()
@@ -186,6 +190,7 @@ while True:
 def senddata(data):
 	print("Sending Data:")
 	print(data)
-	setPixelColor(data)
-	ind
+	strip.setPixelColor(data)
+	indicator()
+	
 	
