@@ -7,8 +7,12 @@
 int R = 255;
 int G = 0;
 int B = 123;
+// Led Frequency
+// Set to NEO_KHZ400 if using a 8MHz 3.3v Board
+String Frq = NEO_KHZ800;
 
-
+// Enable Debug Led On Pin 1
+bool Debug = True;
 // Indicator Pin
 #define IND 8
 // Indicator LEDs
@@ -33,16 +37,45 @@ int Send;
 String Data4 = "";
 int count = 0;
 // Set to NEO_KHZ400 if using a 8MHz 3.3v Board
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(leds, PIN, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel ind = Adafruit_NeoPixel(LND, IND, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(leds, PIN, NEO_GRB + Frq);
+Adafruit_NeoPixel ind = Adafruit_NeoPixel(LND, IND, NEO_GRB + Frq);
+
 void Indicator() {
+  count = 0;
+  while (count < LND) {
+    ind.setPixelColor(count, 255, 255, 255);
+    count++;
+  }
+
+}
+void Start() {
+count = 0;
+  while (count < LND) {
+    strip.setPixelColor(count, 255, 255, 255);
+    count++;
+  }
+   count = 0;
+  while (count < LND) {
+    ind.setPixelColor(count, 255, 255, 255);
+    count++;
+  }
+  ind.show();
+  delay(5000)
+  strip.show();
+  count = 0;
+  while (count < LND) {
+    strip.setPixelColor(count, 0, 0, 0);
+    count++;
+  }
+  strip.show();
   count = 0;
   while (count < LND) {
     ind.setPixelColor(count, 0, 0, 0);
     count++;
   }
-
+  ind.show();
 }
+
 void setup() {
   LoRa.begin(433E6);
   LoRa.begin(433E6);
@@ -51,7 +84,13 @@ void setup() {
   strip.begin();
   strip.show();
   Serial.println("LoRa Receiver");
-
+  if( Debug == True){
+  Adafruit_NeoPixel De = Adafruit_NeoPixel(1, 2, NEO_GRB + Frq);
+  De.setPixelColor(0,0,255,0)
+  }
+  Indicator();
+  Start
+  
   if (!
       LoRa.begin(433E6)) {
     Serial.println("Starting LoRa failed!");
