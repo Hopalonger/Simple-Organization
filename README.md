@@ -60,6 +60,8 @@ Please Refer to [Install-Instructions.md](https://github.com/Hopalonger/Simple-O
 Please read the [Wiki Article](https://github.com/Hopalonger/Simple-Organization/wiki/Contributing-Standards:) on Contributing.
 
 ## Licence:
+### Server Code 
+All Code in the `Server ` Folder  is Released under the GPL licence Due to Opencarts Licencing. 
 ### Attribution-NonCommercial CC BY-NC
 What this means that you are able to remix, tweak, and build upon your work non-commercially, Although new works must acknowledge
 that I created the base code and that you are non-commercial, you don't have to use the same license in your works.  
