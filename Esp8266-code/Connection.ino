@@ -110,8 +110,11 @@ void setup() {
 void loop() {
     // put your main code here, to run repeatedly:
     HTTPClient http;  //Declare an object of class HTTPClient
- 
-    http.begin("http://jsonplaceholder.typicode.com/users/1");  //Specify request destination
+    if (ip == INADDR_NONE) {
+      Serial.println(" Incorrect hostname");
+    }
+    else{
+    http.begin("ip");  //Specify request destination
     int httpCode = http.GET();                                                                  //Send the request
  
     if (httpCode > 0) { //Check the returning code
@@ -311,6 +314,6 @@ void loop() {
     }
 
   }
-}
-}
+  }
+    }
 }
