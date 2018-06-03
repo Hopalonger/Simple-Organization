@@ -14,8 +14,9 @@ sudo apt-get -y install avahi-utils
 print "[+] Installing Website"
 sudo rm /var/www/html/index.html 
 git clone https://github.com/Hopalonger/opencart.git 
-sudo cp -r opencart/upload /var/www/html/
-
+sudo cp -r opencart/upload /var/www/
+sudo rm /var/www/html
+mv /var/www/upload /var/www/html
 
 
 sudo cp /var/www/html/admin/config-dist.php /var/www/html/admin/config.php
