@@ -15,13 +15,15 @@ print "[+] Installing Website"
 sudo rm /var/www/html/index.html 
 git clone https://github.com/Hopalonger/opencart.git 
 sudo cp -r opencart/upload /var/www/html/
-cd /var/www/html
 
-sudo
-udo cp /var/www/html/admin/config-dist.php /var/www/html/admin/config.php
+
+
+sudo cp /var/www/html/admin/config-dist.php /var/www/html/admin/config.php
 sudo cp /var/www/html/config-dist.php /var/www/html/config.php
-sudo chmod 777 -R /var/www/html/opencart-master 
-
+sudo chmod 777 -R /var/www/html/opencart
+rm /var/www/html/admin/config-dist.php
+rm /var/www/html/config-dist.php
+sudo rm -r opencart
 // Setting To Run At Startup 
 print "[+] Setting Auto Start Run"
 sudo update-rc.d Simple-Organization/Server/Start.sh defaults
