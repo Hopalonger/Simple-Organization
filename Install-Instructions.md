@@ -12,7 +12,7 @@
 9.Complete the installation through the web pages. Once the installation is complete remove the install directory.
 10. Finally Type 'cd opencart/upload' Then ' rm -rf install'
 11. Do a Final Reboot of the server. Everything Should be Working from then on. 
-
+12. You will be promted to move the storage you have to manualy do this with this command `sudo mv /var/www/html/system/storage/ /var/www/storage/`
 
 
 
