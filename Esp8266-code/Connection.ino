@@ -137,10 +137,7 @@ void setup() {
 
 void loop() {
   while (WiFi.status() == WL_CONNECTED ) {
-    String ipString = String(ip[0]);
-    for (byte octet = 1; octet < 4; ++octet) {
-      ipString += '.' + String(ip[octet]);
-    }
+    
     String Ip2 = "http://" + ip;
     // put your main code here, to run repeatedly:
     HTTPClient http;  //Declare an object of class HTTPClient
@@ -150,23 +147,29 @@ void loop() {
     if (httpCode > 0) { //Check the returning code
 
       String payload = http.getString();
-      Serial.print("Received: '");
-      Serial.println(payload);
-      String Data = payload;
-      String Data4 = Data.substring(0, 4);
-      Serial.print("Received Device Code:");
-      Serial.println(Data.substring(0, 4));
-      if (Data4 == Code) {
-        Serial.print("Recived LED:");
-        String LEDs = Data.substring(4);
-        Serial.println(LED);
-        Data = "";
-        Data4 = "";
-        int l = LEDs.toInt();
-        strip.setPixelColor(l, R, G, B);
-        LEDs = "";
-        l = 0;
-        Indicator();
+          delay(100);
+          Serial.print("Received: '");
+          Serial.println(payload);
+          String Data4 = payload.substring(0, 4);
+          delay(100);
+          Serial.print("Received Device Code:");
+          Serial.println(Data4);
+          delay(100);
+          if (Data4 == Code) {
+            Serial.print("Recived LED:");
+            String LEDs = payload.substring(4);
+            Serial.println(LED);
+            delay(100);
+            payload = "";
+            Data4 = "";
+            delay(100);
+            int l = LEDs.toInt();
+            strip.setPixelColor(l, R, G, B);
+            LEDs = "";
+            delay(100);
+            l = 0;
+            Indicator();
+            http.end();
       }
       else {
         Serial.println("HTTP Not Working");
