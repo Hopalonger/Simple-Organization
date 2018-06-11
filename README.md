@@ -16,8 +16,7 @@ help organize and keep track of all of your household items. People in the futur
 ## How it Works:
 Simple Organization is a Program Based off of Opencart but so much more at the same time.
 When A product is seached for and found, Coresponding Adressable LED lights/Neopixels turn on around the place where it
-is supposed to be. There are 2 Basic Ways of trasmiting data, Intnernet and LoRa. The LoRa Method Requires internet 
-for the Relay module. This system could be implemented into Cabinets, Part Orgaizers and much more.  
+is supposed to be. This system could be implemented into Cabinets, Part Orgaizers and much more.  
 
 
 ### Internet Based:
@@ -33,22 +32,14 @@ for the Relay module. This system could be implemented into Cabinets, Part Orgai
 
 
 ## Hardware:
-### LoRa Client:
-Any Arduino (Recommnend Pro Mini Run at 3v3)
-2 Seperate Strips of WS2812, WS2811, or WS2812B LEDS (One Strip is indicator and one is For each Item)
-And Any Semtech SX1276/77/78/79
-Any Organizer that You want to make smart
 
-### Relay (LoRa):
-Any Linux Based Computer with 1 Free Usb Port
-Any 3v3   )
-Any Semtech SX1276/77/78/79 Soldered to the Arduino
-
-### Internet Based:
+### Raspberry Pi Based Client:
 Raspberry Pi (Recommend Zero W)
 2 Seperate Strips of WS2812, WS2811, or WS2812B LEDS (One Strip is indicator and one is For each Item)
 Any Organizer that you want to make smart
 
+### ESP8266 Based Client:
+Any ESP8266 With Support, Recommend Node MCU and a battery Backup of Some sort
 ### Server:
 Any System that Supports OpenCart, Wamp/Lamp 
 We Reccomend Raspberry Pi 3 - Model B+ 
