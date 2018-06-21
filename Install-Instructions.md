@@ -25,3 +25,12 @@
 7. Next you need to create a new unique device code for the `String Code` line.
 8. Then Change the `IPString` String to be the IP address of the Raspberry PI.
 9. Upload the Code to the Arduino with the upload button in the top left.
+10. Connect The LED Strips to the pins that where selected in the IDE 
+
+## Install Instructions For Raspberry Pi:
+1. Clone the Repository to your computer with the `git clone https://github.com/Hopalonger/Simple-Organization.git` Command.
+2. Navigate to the Server Directory with the command `cd Simple-Organization/RaspberryPI`.
+3. Run the install Script with `bash install.sh`.
+4. Connect The Neopixels to the Raspberry Pi( They dont Need a logic converter. Run data and power at 3v3) .
+5. Run the command `sudo reboot`.
+6. All finished.
