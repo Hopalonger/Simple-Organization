@@ -12,6 +12,9 @@ echo "[+] Installing NeoPixels"
 git clone https://github.com/jgarff/rpi_ws281x.git
 cd rpi_ws281x
 scons
+echo "[+] Setting to Auto Start"
+sudo update-rc.d Simple-Organization/RaspberryPI/start.sh defaults
+chmod +x Simple-Organization/RaspberryPI/start.sh
 echo "[+] Installing Python Update"
 cd python
 sudo python setup.py install
