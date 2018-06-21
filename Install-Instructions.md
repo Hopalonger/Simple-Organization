@@ -12,7 +12,16 @@
 9.Complete the installation through the web pages. Once the installation is complete remove the install directory.
 10. Finally Type 'cd opencart/upload' Then ' rm -rf install'
 11. Do a Final Reboot of the server. Everything Should be Working from then on. 
+12. Create A Static IP Address for the PI.
 12. You will be promted to move the storage you have to manualy do this with this command `sudo mv /var/www/html/system/storage/ /var/www/storage/`
 
-
-
+## Install Instructions For ESP8266/Node MCU:
+1. Clone the respository to an accessable place with either the `git clone` command or ZIP download. 
+2. Open the Code in the Arduiono IDE.
+3. Install the ESP8266 Board Manager.
+4. Install the `Wifimanager`and `Adafruit_Neopixels`.
+5. In the `Tools` Tab Select the correct Board and port for the the device.
+6. Go to The lines that start with `#Define` then edit any of the values on the end.
+7. Next you need to create a new unique device code for the `String Code` line.
+8. Then Change the `IPString` String to be the IP address of the Raspberry PI.
+9. Upload the Code to the Arduino with the upload button in the top left.
