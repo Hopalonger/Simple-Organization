@@ -7,7 +7,8 @@
 #include <Adafruit_NeoPixel.h>
 #ifdef __AVR__
 #include <avr/power.h>
-************
+#endif
+//*********************************************************
 // Which pin on the Arduino is connected to the NeoPixels for the Main Strip?
 #define PIN            15
 // How many NeoPixels are attached to the Arduino for the Main Strip?
