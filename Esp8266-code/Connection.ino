@@ -1,15 +1,13 @@
-
 #include <Adafruit_NeoPixel.h>
 #include <WiFiManager.h>
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
 #include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
+#include <ESP8266HTTPClient.h>  
 #include <Adafruit_NeoPixel.h>
 #ifdef __AVR__
 #include <avr/power.h>
-#endif
-//*********************************************************
+************
 // Which pin on the Arduino is connected to the NeoPixels for the Main Strip?
 #define PIN            15
 // How many NeoPixels are attached to the Arduino for the Main Strip?
@@ -17,21 +15,24 @@
 // Which pin on the Arduino is connected to the NeoPixels for the Indicator Strip?
 #define IND 8
 // How many NeoPixels are attached to the Arduino for the Indicator Strip?
-#define LND 
-// Ip Address of Server
-String  ipString = "10.42.252.179";
-// Device Code 4 Char Alpha Numerical
+#define LND 8
+// Ip Address of Server (last 2 or 3 Digits of IP works best with static IP on the same subnet such as 10.42.252.179.
+// 179 would be the number we want.
+#define ipend 179
+// Device Code 4 Char Alpha Numerical 
 String Code = "aaaa";
 //Color in RGB
 #define R 255
 #define G 255
 #define B 255
-**************************************************************
+//**************************************************************
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel ind = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel ind = Adafruit_NeoPixel(LND, IND, NEO_GRB + NEO_KHZ800);
 WiFiClient wifiClient;
 WiFiUDP udp;
 IPAddress ip;
+String Ip;
+String Da;
 void setup() {
   Serial.begin(115200);
   // Internet Connection With The Wifi Manager Libary
@@ -70,12 +71,13 @@ void loop() {
   Serial.println("Running");
   if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
     Serial.print("Connecting to:");
-    nhfg bc
+
     HTTPClient Check;
     HTTPClient http;  //De lare an object of class HTTPClient
-
-    String url = "http://" + ipString + "/newfile.txt";
-    String Power = "http://" + ipString + "/power.txt";
+    IPAddress ipstring = WiFi.localIP();
+    Ip = String(ipstring[0]) + '.' + String(ipstring[1]) + '.' + String(ipstring[2]) + '.' + ipend ;
+    String url = "http://" + Ip + "/newfile.txt";
+    String Power = "http://" + Ip + "/power.txt";
     Serial.println(url);
     Serial.println(Power);
     Check.begin(Power);
@@ -89,7 +91,7 @@ void loop() {
       if (C.toInt() > 100) {
         Check.end();
         Serial.println("Recent");
-        String url = "http://" + ipString + "/newfile.txt";
+        String url = "http://" + Ip + "/newfile.txt";
         http.begin(url);  //Specify request destination
         int bad = http.GET();
         Serial.print("Connecting:");
@@ -103,13 +105,29 @@ void loop() {
           if ( Code == payload.substring(0, 4)) {
             Serial.print("Got Code");
             Serial.println(payload.substring(0, 4));
-            Serial.print("Got LED:");
+            Serial.print("Got Data:");
             Serial.println(payload.substring(4));
-            String light = payload.substring(4);
-            pixels.setPixelColor(light.toInt(), R, G, B);
+            String D = payload.substring(4);
+            int i = 0;
+            while ( i < 7) {
+              Serial.println(D);
+              Serial.print(D.charAt(4 - i * 2));
+              Serial.println(D.charAt(5 - i * 2));
+              Da = String(D.charAt(4 - i * 2)) + String(D.charAt(5 - i * 2));
+              D.remove(5 - i * 2);
+
+              Serial.println(D);
+              Serial.print("String: ");
+              Serial.println(Da);
+              Serial.println("Done");
+              pixels.setPixelColor(Da.toInt(), R, G, B);
+              i++;
+
+            }
             pixels.show();
             Indicator();
-            light = "";
+            Da ="";
+            
             delay(5000);
           }
           else {
@@ -133,5 +151,7 @@ void Indicator() {
     ind.setPixelColor(count, 255, 255, 255);
     count++;
   }
- ind.show();
+  ind.show();
+
+
 }
