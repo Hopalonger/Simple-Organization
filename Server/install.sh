@@ -1,4 +1,4 @@
-print "[+] Installing updates"
+echo "[+] Installing updates"
 sudo apt update -y
 echo "[+] Installing upgrades"
 sudo apt upgrade -y 
