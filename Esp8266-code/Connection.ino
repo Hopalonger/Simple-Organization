@@ -103,7 +103,7 @@ void setup() {
 
   server.on("/", []() {
     String Line1 = "<title> Esp Data</title><center> <h1>Sensor to Node MCU Web Server</h1> <h3>Server Checks:" + String(b) + "</h3> <h3> Status: " + String(Stat) + "</h3>  ";
-    String Line2 = "<h3><a href='/ledON'>Turn On The Inidcator Lights</a></h3><h3><a href='/ledOff'>Turn Off The Inidcator Lights</a></h3> <h3>";
+    String Line2 = "<h3><a href='/ledON'>Turn On The Indicator Lights</a></h3><h3><a href='/ledOff'>Turn Off The Indicator Lights</a></h3> <h3>";
     String Line3 = "<input type='button' value='Refresh Page' onClick='location.href=location.href'></h3> </center>";
     String page = Line1 + Line2 + Line3;
     server.send(200, "text/html", page );
@@ -121,7 +121,7 @@ void loop() {
   if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
     Serial.print("Connecting to:");
     HTTPClient Check;
-    HTTPClient http;  //De lare an object of class HTTPClient
+    HTTPClient http;  //Declare an object of class HTTPClient
     IPAddress ipstring = WiFi.localIP();
     Ip = String(ipstring[0]) + '.' + String(ipstring[1]) + '.' + String(ipstring[2]) + '.' + ipend ;
     String url = "http://" + Ip + "/access.txt";
