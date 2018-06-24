@@ -14,12 +14,12 @@
 // How many NeoPixels are attached to the Arduino for the Main Strip?
 #define NUMPIXELS      60
 // Which pin on the Arduino is connected to the NeoPixels for the Indicator Strip?
-#define IND 8
+#define IND 5
 // How many NeoPixels are attached to the Arduino for the Indicator Strip?
 #define LND 8
 // Ip Address of Server (last 2 or 3 Digits of IP works best with static IP on the same subnet such as 10.42.252.179.
 // 179 would be the number we want.
-#define ipend 179
+#define ipend 181
 // Device Code 4 Char Alpha Numerical 
 String Code = "aaaa";
 //Color in RGB
@@ -77,8 +77,8 @@ void loop() {
     HTTPClient http;  //De lare an object of class HTTPClient
     IPAddress ipstring = WiFi.localIP();
     Ip = String(ipstring[0]) + '.' + String(ipstring[1]) + '.' + String(ipstring[2]) + '.' + ipend ;
-    String url = "http://" + Ip + "/newfile.txt";
-    String Power = "http://" + Ip + "/power.txt";
+    String url = "http://" + Ip + "/access.txt;
+    String Power = "http://" + Ip + "/recent.txt";
     Serial.println(url);
     Serial.println(Power);
     Check.begin(Power);
@@ -92,7 +92,6 @@ void loop() {
       if (C.toInt() > 100) {
         Check.end();
         Serial.println("Recent");
-        String url = "http://" + Ip + "/newfile.txt";
         http.begin(url);  //Specify request destination
         int bad = http.GET();
         Serial.print("Connecting:");
