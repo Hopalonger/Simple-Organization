@@ -77,7 +77,7 @@ void loop() {
     HTTPClient http;  //De lare an object of class HTTPClient
     IPAddress ipstring = WiFi.localIP();
     Ip = String(ipstring[0]) + '.' + String(ipstring[1]) + '.' + String(ipstring[2]) + '.' + ipend ;
-    String url = "http://" + Ip + "/access.txt;
+    String url = "http://" + Ip + "/access.txt";
     String Power = "http://" + Ip + "/recent.txt";
     Serial.println(url);
     Serial.println(Power);
