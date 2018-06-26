@@ -8,10 +8,10 @@
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 
-An IOT Physical Orgaization and Search Engine for all of your things. 
+An IOT Physical Orgaization system and Search Engine for all of your physical things. 
 
-**Simple Organization** is a Local Internet/Radio Based Network of interfaces that
-help organize and keep track of all of your household items. People in the future have jobs based on creativity but if they are not allowed to be creative due to them not being able to find things it makes them very unproductive
+**Simple Organization** is a Local internet based network of interfaces that
+help organize and keep track of all of your household items. This can keep you more efficent in your every day tasks which can save so much time allowing for you to do things that you need to do. People in the future have jobs based on creativity but if they are not allowed to be creative due to them not being able to find things it makes them very unproductive
 
 ## How it Works:
 Simple Organization is a Program Based off of Opencart but so much more at the same time.
