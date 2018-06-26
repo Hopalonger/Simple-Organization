@@ -26,7 +26,7 @@
 8. Then Change the `IPString` String to be the IP address of the Raspberry PI.
 9. Upload the Code to the Arduino with the upload button in the top left.
 10. To start Wiring you can get Custom PCB's Ordered that connect to the Node MCU or Connnect it with basic soldering
-11. Connect The Indicator Strips Data in to `D1` And the Main Strips Data om to `D8`, sse Detachable connecters if possable.
+11. Connect The Indicator Strips Data in to `D1` And the Main Strips Data in to `D8`, use Detachable connecters if possable.
 12. Connect VCC of the Strips to the Normaly Closes Side of a Push Switch So that they can be turned off
 13. Connect the common terminal of the switch to a `3v3` Pin on the Node MCU
 14. Connect GND from both Strips to `GND` Pins on the Node MCU
@@ -39,10 +39,11 @@
 4. Connect The Neopixels to the Raspberry Pi( They dont Need a logic converter. Run data and power at 3v3) .
 5. Run the command `sudo reboot`.
 6. All finished.
-7. To start Wiring you can get Custom PCB's Ordered that connect to the Raspberry PI or Connnect it with basic soldering
-8. Connect The Indicator Strips Data in to Pin `18` And the Main Strips Data om to Pin `16`, sse Detachable connecters if possable.
-9. Connect VCC of the Strips to the Normaly Closes Side of a Push Switch So that they can be turned off
-10. Connect the common terminal of the switch to a `3v3` Pin on the Raspberry PI
-11. Connect GND from both Strips to `GND` Pins on the Raspberry Pi
-12. Connect power source for the Raspberry Pi such as  Batterys, Powersupply, ect.
+7. Change All of the settings on the top of the script for the Set that you are planning on using. 
+8. To start Wiring you can get Custom PCB's Ordered that connect to the Raspberry PI or Connnect it with basic soldering
+9. Connect The Indicator Strips Data in to Pin `18` And the Main Strips Data in to Pin `16`, use Detachable connecters if possable.
+10. Connect VCC of the Strips to the Normaly Closes Side of a Push Switch So that they can be turned off
+11. Connect the common terminal of the switch to a `3v3` Pin on the Raspberry PI
+12. Connect GND from both Strips to `GND` Pins on the Raspberry Pi
+13. Connect power source for the Raspberry Pi such as  Batterys, Powersupply, ect.
 
