@@ -16,14 +16,14 @@ G2 = "100"
 B2 = "255"
 # NeoPixel Data For Product Strip
 LED_COUNT   = 16      # Number of LED pixels.
-LED_PIN     = 18      # GPIO pin connected to the pixels (must support PWM!).
-LED_FREQ_HZ = 800000  # LED signal frequency in hertz (usually 800khz) Change To 400khz if using 8mhz 3v3 board.
+LED_PIN     = 16      # GPIO pin connected to the pixels (must support PWM!).
+LED_FREQ_HZ = 800000  # LED signal frequency in hertz (usually 800khz) 
 LED_DMA     = 5       # DMA channel to use for generating signal (try 5)
 LED_INVERT  = False   # True to invert the signal (when using NPN transistor level shift)
 # Neopixel Data for the Indicator Strip
 LED_COUNT2   = 16      # Number of LED pixels.
 LED_PIN2     = 18      # GPIO pin connected to the pixels (must support PWM!).
-LED_FREQ_HZ2 = 800000  # LED signal frequency in hertz (usually 800khz) Change To 400khz if using 8mhz 3v3 board.
+LED_FREQ_HZ2 = 800000  # LED signal frequency in hertz (usually 800khz) 
 LED_DMA2     = 5       # DMA channel to use for generating signal (try 5)
 LED_INVERT2  = False   # True to invert the signal (when using NPN transistor level shift)
 
