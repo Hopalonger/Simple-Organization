@@ -26,9 +26,9 @@
 8. Then Change the `IPString` String to be the IP address of the Raspberry PI.
 9. Upload the Code to the Arduino with the upload button in the top left.
 10. To start Wiring you can get Custom PCB's Ordered that connect to the Node MCU or Connnect it with basic soldering
-11. Connect The Indicator Strips Data in to `D1` And the Main Strips Data in to `D8`, use Detachable connecters if possable.
-12. Connect VCC of the Strips to the Normaly Closes Side of a Push Switch So that they can be turned off
-13. Connect the common terminal of the switch to a `3v3` Pin on the Node MCU
+11. Connect The Indicator Strips Data in to `D1` And the Main Strips Data in to `D8`, use Detachable connecters if possible.
+12. Connect VCC of the LED Strip to a `3v3` Pin on the Node MCU
+13. Connect The `NO` Side of a switch to Your Interupt Pin, and Connect Common or `C` to a `3v3` Pin on the Node MCU
 14. Connect GND from both Strips to `GND` Pins on the Node MCU
 15. Connect power source for the Node MCU such as  Batterys, Powersupply, ect.
 
