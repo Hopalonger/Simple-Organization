@@ -12,16 +12,16 @@
 #endif
 //*********************************************************
 // Which pin on the Arduino is connected to the NeoPixels for the Main Strip?
-#define PIN            2
+#define PIN            15
 // How many NeoPixels are attached to the Arduino for the Main Strip?
 #define NUMPIXELS      11
 // Which pin on the Arduino is connected to the NeoPixels for the Indicator Strip?
-#define IND 0
+#define IND 5
 // How many NeoPixels are attached to the Arduino for the Indicator Strip?
 #define LND 6
 // Ip Address of Server (last 2 or 3 Digits of IP works best with static IP on the same subnet such as 10.42.252.179.
 // 179 would be the number we want.
-#define ipend 181
+#define ipend 179
 // Device Code 4 Char Alpha Numerical
 String Code = "aaaa";
 //Color in RGB
@@ -29,7 +29,7 @@ String Code = "aaaa";
 #define G 0
 #define B 125
 // The Pin for Which The Switch is connected to
-const byte interruptPin = 15;
+const byte interruptPin = 2;
 //**************************************************************
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 Adafruit_NeoPixel ind = Adafruit_NeoPixel(LND, IND, NEO_GRB + NEO_KHZ800);
@@ -165,19 +165,19 @@ void loop() {
             String D = payload.substring(4);
             int i = 0;
             Stat = "Got Data" + D;
-            while ( i < 7) {
-              Serial.println(D);
-              Serial.print(D.charAt(4 - i * 2));
-              Serial.println(D.charAt(5 - i * 2));
-              Da = String(D.charAt(4 - i * 2)) + String(D.charAt(5 - i * 2));
-              D.remove(5 - i * 2);
-              Serial.println(D);
-              Serial.print("String: ");
-              Serial.println(Da);
-              Serial.println("Done");
-              pixels.setPixelColor((Da.toInt() + 2) * 2, R, G, B);
-              i++;
-            }
+            Serial.print("Pulled LED's:");
+            Serial.println(D.substring(0,2).toInt());
+            pixels.setPixelColor(D.substring(0,2).toInt() , R,G,B);
+            Serial.println(D.substring(2,4).toInt());
+            pixels.setPixelColor(D.substring(2,4).toInt() , R,G,B);
+            Serial.println(D.substring(4,6).toInt());
+            pixels.setPixelColor(D.substring(6,8).toInt() , R,G,B);
+            Serial.println(D.substring(8,10).toInt());
+            pixels.setPixelColor(D.substring(0,2).toInt() , R,G,B);
+            Serial.println(D.substring(10,12).toInt());
+            pixels.setPixelColor(D.substring(0,2).toInt() , R,G,B);
+            Serial.println(D.substring(12,14).toInt());
+            pixels.setPixelColor(D.substring(0,2).toInt() , R,G,B);
             pixels.show();
             Indicator();
             Da = "";
